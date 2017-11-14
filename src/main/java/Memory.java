@@ -3,40 +3,93 @@
  */
 public class Memory {
 
-    public Memory(){}
+    private char[] array;
+    private int pointer;
 
-    public Memory(int size){}
+    /**
+     * Creates default memory array with 1000 cells.
+     */
+    public Memory(){
+        array = new char[1000];
+        pointer = 0;
+    }
 
+    /**
+     * Creates memory array with custom size.
+     */
+    public Memory(int size){
+        array = new char[size];
+        pointer = 0;
+    }
+
+    /**
+     *
+     * @return value of current cell
+     */
     public char getCurrentCellValue(){
-        return 0;
+        return array[pointer];
     }
 
+    /**
+     *
+     * @return current position of pointer
+     */
     public int getPointerPosition(){
-        return 0;
+        return pointer;
     }
 
+    /**
+     * Move pointer to next cell
+     * @return value of next cell
+     */
     public char next(){
-        return 0;
+        return array[++pointer];
     }
 
+    /**
+     * Move pointer to previous cell
+     * @return value of previous cell
+     */
     public char previous(){
-        return 0;
+        return array[--pointer];
     }
 
+    /**
+     * Check if the pointer can be moved right
+     * @return true if the pointer can be moved right, false if pointer points to the last cell
+     */
     public boolean hasNext(){
-        return true;
+        return pointer+1 < size();
     }
 
+    /**
+     * Check if the pointer can be moved left
+     * @return true if the pointer can be moved left, false if pointer points to the first cell
+     */
     public boolean hasPrevious(){
-        return true;
+        return pointer > 0;
     }
 
-    public void increaseCurrentCell(){}
+    /**
+     * Increase value of current cell by one
+     */
+    public void increaseCurrentCell(){
+        array[pointer]++;
+    }
 
-    public void decreaseCurrentCell(){}
+    /**
+     * Decrease value of current cell by one
+     */
+    public void decreaseCurrentCell(){
+        array[pointer]--;
+    }
 
+    /**
+     *
+     * @return size of memory array
+     */
     public int size(){
-        return 0;
+        return array.length;
     }
 
 }

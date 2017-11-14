@@ -43,7 +43,6 @@ public class MemoryTest {
     @Test
     public void hasNextTest(){
         Memory memory = new Memory(2);
-        memory.next();
         Assert.assertTrue(memory.hasNext());
         memory.next();
         Assert.assertFalse(memory.hasNext());
