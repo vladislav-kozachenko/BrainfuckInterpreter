@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="MemoryTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2017-11-15T08:56:52" hostname="v-kozachenko" time="0.001">
+  <properties/>
+  <testcase name="incrementTest" classname="MemoryTest" time="0.0"/>
+  <testcase name="decrementTest" classname="MemoryTest" time="0.0"/>
+  <testcase name="hasNextTest" classname="MemoryTest" time="0.0"/>
+  <testcase name="hasPreviousTest" classname="MemoryTest" time="0.0"/>
+  <testcase name="sizeTest" classname="MemoryTest" time="0.0"/>
+  <testcase name="pointerPositionTest" classname="MemoryTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
