@@ -7,6 +7,6 @@ public class InterpreterTest {
     public void executionTest(){
         String sourceCode = "++++++++[>++++[>++>+++>+++>+<<<<-]>+>+>->>+[<]<-]>>.>---.+++++++..+++.>>.<-.<.+++.------.--------.>>+.>++.";
         Interpreter interpreter = new Interpreter();
-        Assert.assertEquals("Hello World!\n", interpreter.execute(sourceCode));
+        Assert.assertEquals("The result of execution is not equals to expected one.", "Hello World!\n", interpreter.execute(sourceCode));
     }
 }

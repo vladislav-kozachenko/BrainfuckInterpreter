@@ -7,20 +7,20 @@ public class MemoryTest {
     @Test
     public void incrementTest(){
         Memory memory = new Memory();
-        Assert.assertEquals(0, memory.getCurrentCellValue());
+        Assert.assertEquals("Wrong cell value after initialization.",0, memory.getCurrentCellValue());
         memory.increaseCurrentCell();
-        Assert.assertEquals(1, memory.getCurrentCellValue());
+        Assert.assertEquals("Increment works incorrectly.", 1, memory.getCurrentCellValue());
     }
 
     @Test
     public void pointerPositionTest(){
         Memory memory = new Memory();
-        Assert.assertEquals(0, memory.getPointerPosition());
+        Assert.assertEquals("Wrong pointer position after initialization.", 0, memory.getPointerPosition());
         memory.next();
         memory.next();
-        Assert.assertEquals(2, memory.getPointerPosition());
+        Assert.assertEquals("Pointer increment works incorrectly", 2, memory.getPointerPosition());
         memory.previous();
-        Assert.assertEquals(1, memory.getPointerPosition());
+        Assert.assertEquals("Pointer decrement works incorrectly", 1, memory.getPointerPosition());
     }
 
     @Test
@@ -29,30 +29,30 @@ public class MemoryTest {
         memory.increaseCurrentCell();
         memory.increaseCurrentCell();
         memory.decreaseCurrentCell();
-        Assert.assertEquals(1, memory.getCurrentCellValue());
+        Assert.assertEquals("Decrement works incorrectly", 1, memory.getCurrentCellValue());
         memory.decreaseCurrentCell();
-        Assert.assertEquals(0, memory.getCurrentCellValue());
+        Assert.assertEquals("Decrement works incorrectly", 0, memory.getCurrentCellValue());
     }
 
     @Test
     public void sizeTest(){
         Memory memory = new Memory(100);
-        Assert.assertEquals(100, memory.size());
+        Assert.assertEquals("Unable to get memory size", 100, memory.size());
     }
 
     @Test
     public void hasNextTest(){
         Memory memory = new Memory(2);
-        Assert.assertTrue(memory.hasNext());
+        Assert.assertTrue("Unable to check ability to increase pointer", memory.hasNext());
         memory.next();
-        Assert.assertFalse(memory.hasNext());
+        Assert.assertFalse("Unable to check ability to increase pointer", memory.hasNext());
     }
 
     @Test
     public void hasPreviousTest(){
         Memory memory = new Memory();
-        Assert.assertFalse(memory.hasPrevious());
+        Assert.assertFalse("Unable to check ability to decrease pointer", memory.hasPrevious());
         memory.next();
-        Assert.assertTrue(memory.hasPrevious());
+        Assert.assertTrue("Unable to check ability to decrease pointer", memory.hasPrevious());
     }
 }
