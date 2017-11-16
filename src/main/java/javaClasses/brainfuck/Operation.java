@@ -8,7 +8,7 @@ public enum Operation {
     MOVE_RIGHT('>', "MoveRight"),
     OUTPUT('.', "Output"),
     LOOP_START('[', "LoopStart"),
-    LOOP_END(']', "");
+    LOOP_END(']', "LoopEnd");
 
     private final char symbol;
     private final String commandName;
