@@ -2,18 +2,20 @@ package javaClasses.brainfuck;
 
 public enum Operation {
 
-    INCREMENT('+'),
-    DECREMENT('-'),
-    MOVE_LEFT('<'),
-    MOVE_RIGHT('>'),
-    OUTPUT('.'),
-    LOOP_START('['),
-    LOOP_END(']');
+    INCREMENT('+', "Increment"),
+    DECREMENT('-', "Decrement"),
+    MOVE_LEFT('<', "MoveLeft"),
+    MOVE_RIGHT('>', "MoveRight"),
+    OUTPUT('.', "Output"),
+    LOOP_START('[', "LoopStart"),
+    LOOP_END(']', "");
 
     private final char symbol;
+    private final String commandName;
 
-    Operation(char symbol){
+    Operation(char symbol, String commandName){
         this.symbol = symbol;
+        this.commandName = commandName;
     }
 
     public char getSymbol() {
