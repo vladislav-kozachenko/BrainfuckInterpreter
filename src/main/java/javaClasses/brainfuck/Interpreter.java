@@ -1,3 +1,5 @@
+package javaClasses.brainfuck;
+
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Deque;
@@ -7,23 +9,18 @@ import java.util.Deque;
  */
 public class Interpreter {
 
-    private Memory memory;
-
-    public Interpreter(){
-        memory = new Memory();
-    }
-
     /**
      * Execute program.
      * @param input is the String with source code on BrainFuck
      * @return String with the program output
      */
     public String execute(String input){
-        ArrayList<Command> commands = new Parser().parse(input);
+        Memory memory = new Memory();
+        ArrayList<Operation> operations = new Parser().parse(input);
         StringBuilder output = new StringBuilder();
         Deque<Integer> loopStart = new ArrayDeque<>();
-        for(int index = 0; index < commands.size(); index++){
-            switch (commands.get(index)){
+        for(int index = 0; index < operations.size(); index++){
+            switch (operations.get(index)){
                 case OUTPUT:
                     output.append(memory.getCurrentCellValue());
                     break;

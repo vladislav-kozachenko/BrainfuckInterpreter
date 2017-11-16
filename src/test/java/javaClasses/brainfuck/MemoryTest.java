@@ -1,4 +1,6 @@
-import org.junit.Before;
+package javaClasses.brainfuck;
+
+import javaClasses.brainfuck.Memory;
 import org.junit.Test;
 import org.junit.Assert;
 

@@ -1,3 +1,5 @@
+package javaClasses.brainfuck;
+
 /**
  * Contains storage for program executing.
  */
